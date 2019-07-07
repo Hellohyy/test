@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>更新</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div style="width: 400px;height: 500px;margin: auto;background-color:snow;opacity: 0.7;">
+        <br><h2 style="align-content: center">修改密码</h2><br>
+    <form action='/updateaction/' method="post">
+        <input type="hidden" name="id" value="{{id}}" />
+
+
+        <div class="input-group">
+            <span class="input-group-addon" id="sizing-addon2">用户名</span>
+            <input type="text" class="form-control" name="username" value="{{username}}" aria-describedby="sizing-addon2" readonly="True">
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon" id="sizing-addon2">密码</span>
+            <input type="text" class="form-control" name="password" value="{{ password }}" aria-describedby="sizing-addon2">
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary btn-block" typy="submit" value="">更新密码</button>
+                <button type="reset" class="btn btn-primary btn-block">重置</button>
+        </div>
+
+    </form>
+    </div>
+</body>
+</html>

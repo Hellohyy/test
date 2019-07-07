@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul class="pagination">
+       {% if datas.show_shouye_status==1%}
+           <li class=''><a href='/user/user_list?p=1'>首页</a></li>
+           <li class=''><a href='/user/user_list?p={{datas.p-1}}'>上一页</a></li>
+      {%endif%}
+
+       {% for dic in datas.dic_list %}
+           {% if dic==datas.p%}
+             <li class="active"><a href="/user/user_list?p={{dic}}">{{dic}}</a></li>
+           {%else%}
+               <li><a href="/user/user_list?p={{dic}}">{{dic}}</a></li>
+           {%endif%}
+        {%endfor%}
+
+       {% if datas.p < datas.total%}
+            <li class=''><a href='/user/user_list?p={{datas.p+1}}'>下一页</a></li>
+            <li class=''><a href='/user/user_list?p={{datas.total}}'>尾页</a></li>
+       {%endif%}
+            共{{datas.total}}页
+ </ul>
+</body>
+</html>
